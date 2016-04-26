@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    compile "com.netflix.zuul:zuul-core:1.2.0"
+    compile "com.netflix.zuul:zuul-core:1.0.0"
     compile "org.codehaus.groovy:groovy-all:2.4.4"
 
     compile 'org.apache.httpcomponents:httpclient:4.5'
@@ -61,11 +61,11 @@ checkstyle {
     ignoreFailures = true
     showViolations = false
     sourceSets = [sourceSets.main]
-    reportsDir = rootProject.file('zuul-simple-webapp/build/reports/checkstyle')
+    reportsDir = rootProject.file('build/reports/checkstyle')
 }
 
 codenarc {
-    configFile = rootProject.file('zuul-simple-webapp/config/codenarc/rules.groovy')
+    configFile = rootProject.file('config/codenarc/rules.groovy')
     ignoreFailures = true
     sourceSets = [sourceSets.main]
     reportFormat = 'xml'
