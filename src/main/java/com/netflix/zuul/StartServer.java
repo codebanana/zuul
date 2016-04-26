@@ -65,54 +65,6 @@ public class StartServer implements ServletContextListener {
 
     private void initJavaFilters() {
         final FilterRegistry r = FilterRegistry.instance();
-
-        r.put("javaPreFilter", new ZuulFilter() {
-            @Override
-            public int filterOrder() {
-                return 50000;
-            }
-
-            @Override
-            public String filterType() {
-                return "pre";
-            }
-
-            @Override
-            public boolean shouldFilter() {
-                return true;
-            }
-
-            @Override
-            public Object run() {
-                logger.debug("running javaPreFilter");
-                RequestContext.getCurrentContext().set("javaPreFilter-ran", true);
-                return null;
-            }
-        });
-
-        r.put("javaPostFilter", new ZuulFilter() {
-            @Override
-            public int filterOrder() {
-                return 50000;
-            }
-
-            @Override
-            public String filterType() {
-                return "post";
-            }
-
-            @Override
-            public boolean shouldFilter() {
-                return true;
-            }
-
-            @Override
-            public Object run() {
-                logger.debug("running javaPostFilter");
-                RequestContext.getCurrentContext().set("javaPostFilter-ran", true);
-                return null;
-            }
-        });
     }
 
 }
